@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css?family=Rubik');
+@import url('https://cdn.jsdelivr.net/npm/typeface-league-spartan@0.0.44/index.min.css');
+
+html, body {
+  height: 100%;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background: url('../img/background.svg') no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  font-family: Rubik, -apple-system, BlinkMacSystemFont, Roboto, Segoe UI, Helvetica, Arial, sans-serif;
+}
+
+.nav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 170px;
+  width: 100%;
+}
+
+.logo {
+  width: 100px;
+  height: 50px;
+  margin-left: 7rem;
+}
+
+.docs {
+  font-weight: 500;
+  font-size: .8rem;
+  color: #C3C6DF;
+}
+
+
+.github {
+  display: block;
+  margin: 0 8rem 0 1.5em;
+  padding: .3em 1.5em;
+  font-size: .8rem;
+  transition: transform .3s;
+  border: 2px solid #FF00B6;
+  background-color: #fff;
+  color: #FF00B6;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.github:hover {
+  transform: scale(1.05);
+}
+
+.github:focus {
+  outline: none;
+}
+
+.headers {
+  margin: 11rem 0 0 6.8rem;
+  width: 11.5em;
+  font: 1.8rem League Spartan;
+  color: #192337;
+}
+
+.description {
+  font: .9rem Rubik;
+  color: #ACB0CC;
+  margin-top: 1.5em;
+}
+
+.doc-link {
+  font: .8rem League Spartan;
+  color: #FF00B6;
+  margin-top: 1.3em;
+}
+
+.link-arrow {
+  font: .8rem sans-serif;
+  font-weight: bold;
+  color: #FF00B6;
+}
+
+.is-left-center {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.is-right-center {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    background: #fff;
+  }
+
+  .logo {
+    margin-left: 2em
+  }
+
+  .github {
+    margin-right: 2em
+  }
+
+  .headers {
+    margin: 15rem auto 0 auto;
+  }
+}

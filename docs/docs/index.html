@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="NickTheDev">
+    <meta name="description" content="Cutedoc's documentation.">
+    <title>Cutedoc</title>
+    <link rel="icon" type="image/png" href="static/img/icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/yaml.min.js"></script>
+    <script src="static/js/main.js"></script>
+  </head>
+  <body>
+      <nav id="mobile-nav" class="is-hidden-tablet">
+        <div id="nav-burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="nav-content">
+          <div class="container is-fluid">
+            <img class="logo" alt="Logo" src="static/img/logo.png">
+          </div>
+          
+          <div class="dropdown-container">
+            <p class="nav-header" for="checkbox-introduction">Introduction</p>
+            <ul class="nav-collapse">
+              <li><a href="#intro">Intro</a></li>
+              <li><a href="#installing">Installing</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-container">
+            <p class="nav-header" for="checkbox-projects">Projects</p>
+            <ul class="nav-collapse">
+              <li><a href="#manifests">Manifests</a></li>
+              <li><a href="#building">Building</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <aside class="sidebar is-hidden-mobile">
+        <div class="sidebar-content">
+          <div class="container is-fluid">
+            <img class="logo" alt="Logo" src="static/img/logo.png">
+          </div>
+        
+          <div class="dropdown-container">
+            <p class="nav-header" for="checkbox-introduction">Introduction</p>
+            <ul class="nav-collapse">
+              <li><a href="#intro">Intro</a></li>
+              <li><a href="#installing">Installing</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-container">
+            <p class="nav-header" for="checkbox-projects">Projects</p>
+            <ul class="nav-collapse">
+              <li><a href="#manifests">Manifests</a></li>
+              <li><a href="#building">Building</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+      <section class="body section">
+      <h1 class="article-header">Introduction</h1>
+        <article id="intro">
+          <div class="article">
+            <h1 class="body-header">Intro</h1>
+            <div class="content">
+              <p>We&#39;ve all been there, just finishing up our awesome project, whether it be a design framework
+or front-end library, and finding ourselves wondering how to create documentation for the project.
+We find ourselves envying the beautiful documentation of companies like Stripe, but instead opting
+out of creating custom documentation due to the amount of work it would require. Cutedoc is a simple
+command line tool that can be used to solve this problem.</p>
+
+<p>Using technologies that you already know and love, like github flavored markdown, you can create beautiful documentation sites
+by simply creating markdown files and then stitching them together using a simple manifest file. Cutedoc leverages a high level
+of <em>customization</em> through the manifest file and allows you to specify the template theme and color scheme, the logo and icon of
+used, project metadata, and more.</p>
+
+            </div>
+          </div>
+        </article>
+      
+        <article id="installing">
+          <div class="article">
+            <h1 class="body-header">Installing</h1>
+            <div class="content">
+              <p>If you already have <a href="https://golang.org/" rel="nofollow">Go</a> installed, you can easily grab the latest version of
+Cutedoc by using the <em>go get</em> command in the console. If your GOPATH/bin env variable is set, the
+cutedoc command will be accessible without having to specify the executable path.</p>
+
+<pre><code>$ go get github.com/NickTheDev/cutedoc
+</code></pre>
+
+<p>If you do not have or wish to install Go, you can grab a pre-built binary from
+<a href="https://github.com/NickTheDev/cutedoc/releases" rel="nofollow">Github</a>. However, with this method you will have
+to optionally add the executable to your env variables yourself.</p>
+
+            </div>
+          </div>
+        </article>
+      
+      <h1 class="article-header">Projects</h1>
+        <article id="manifests">
+          <div class="article">
+            <h1 class="body-header">Manifests</h1>
+            <div class="content">
+              <p>To create your project, start by creating a <em>.cutedoc.yml</em> file in a directory of your choice, usually
+the in the root of your project. This is the general structure of a manifest file:</p>
+
+<pre><code>meta:
+  title: Cutedoc
+  author: NickTheDev
+  description: Cutedoc&#39;s documentation.
+  branding:
+    icon: docs/static/img/icon.png
+    logo: docs/static/img/logo.png
+articles:
+  Introduction:
+    Intro: docs/sources/about.md
+</code></pre>
+<h3><a name="meta" class="anchor" href="#meta" rel="nofollow" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+Meta</h3>
+
+<p>To describe basic characteristics of the project, you can define a meta section in the manifest
+file. In this section you may define meta such as the title, author, and description and the
+project branding.</p>
+
+<pre><code># Project metadata.
+meta:
+  # Html header metadata title. Default is blank.
+  title: Cutedoc
+
+  # Html header metadata author. Default is blank.
+  author: NickTheDev
+
+  # Html header metadata description. Default is blank.
+  description: Cool documentation.
+
+  # Project branding.
+  branding:
+    # Html header favicon, preferably 16 x 16. Default is null.
+    icon: path/to/icon.png
+
+    # Logo of the project, preferably 200 x 100. Default is null.
+    logo: path/to/logo.png
+</code></pre>
+<h3><a name="build" class="anchor" href="#build" rel="nofollow" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+Build</h3>
+
+<p>To configure the build of your project, you can define a build section in the manifest file. In this section you may
+specify the output directory of the build and whether to minify the production assets or not.</p>
+
+<pre><code># Build config.
+build:
+  # Output directory of the documentation. Default is &#39;docs&#39;.
+  dir: docs
+
+  # Whether or not to minify the build assets (css, js). Default is true.
+  minify: true
+</code></pre>
+<h3><a name="articles" class="anchor" href="#articles" rel="nofollow" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+Articles</h3>
+
+<p>To link markdown files in your project, you can define an articles section in the manifest file.
+In this section you may define article groups, and then place the links in them.</p>
+
+<pre><code># Project articles.
+articles:
+  # Article group name.
+  Introduction:
+    # Path to article markdown file, may use github flavored markdown.
+    Intro: docs/sources/about.md
+</code></pre>
+<h3><a name="theme" class="anchor" href="#theme" rel="nofollow" aria-hidden="true"><span class="octicon octicon-link"></span></a>
+Theme</h3>
+
+<p>To configure the theme of your project, you can define a theme section in the manifest file.
+You may specify the template name, the only one currently being the minimal theme (The
+documentation you are reading right now uses the minimal theme). You can also
+define the color scheme of the template, namely the primary, secondary, text, nav, and
+background colors.</p>
+
+<pre><code># Project theme.
+theme:
+  # Theme template, currently the only supported template is &#39;minimal&#39;. Default is &#39;minimal&#39;.
+  template: minimal
+
+  # Template color scheme.
+  colors:
+    # Primary color used for headers and navigation group text colors. Default is 3e4669.
+    primary: 3e4669
+
+    # Secondary color used an accent in the navigation and the body headers. Default is c3c6de.
+    secondary: c3c6de
+
+    # Body text color used in the documentation. Default is 3e4669.
+    text: 3e4669
+
+    # Navigation background color. Default is fff.
+    nav: fff
+
+    # Background color. Default is f6f7fb.
+    background: f6f7fb
+</code></pre>
+
+            </div>
+          </div>
+        </article>
+      
+        <article id="building">
+          <div class="article">
+            <h1 class="body-header">Building</h1>
+            <div class="content">
+              <p>To build a project, simply execute the <em>cutedoc</em>  command in a directory containing a <em>.cutedoc.yml</em> manifest file.</p>
+
+<pre><code>$ cutedoc
+</code></pre>
+
+<p>Cutedoc will create documentation in the manifest&#39;s specified output directory the contents will look like this:</p>
+
+<pre><code>/static
+  /img
+    icon.png
+    logo.png
+  /css
+    main.css
+  /js
+    main.js
+index.html
+</code></pre>
+
+            </div>
+          </div>
+        </article>
+      </section>
+  </body>
+</html>

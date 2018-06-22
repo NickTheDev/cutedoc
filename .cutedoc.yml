@@ -1,0 +1,16 @@
+build:
+  dir: docs/docs
+meta:
+  title: Cutedoc
+  author: NickTheDev
+  description: Cutedoc's documentation.
+  branding:
+    icon: docs/static/img/icon.png
+    logo: docs/static/img/logo.png
+articles:
+  Introduction:
+    Intro: docs/sources/about.md
+    Installing: docs/sources/installation.md
+  Projects:
+    Manifests: docs/sources/manifest.md
+    Building: docs/sources/building.md
