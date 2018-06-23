@@ -9,7 +9,7 @@ If you already have Go installed, you can easily grab the latest version of Cute
 If your GOPATH/bin env variable is set, the cutedoc command will be accessible without having to specify the executable path.
 
 ```
-$ go get github.com/NickTheDev/cutedoc
+$ go get github.com/NickTheDev/cutedoc/cmd/cutedoc
 ```
 If you do not have or wish to install Go, you can grab a pre-built binary from Github. However, with this method you will have to
 optionally add the executable to your env variables yourself.
