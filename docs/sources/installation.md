@@ -3,7 +3,7 @@ Cutedoc by using the *go get* command in the console. If your GOPATH/bin env var
 cutedoc command will be accessible without having to specify the executable path.
 
 ```
-$ go get github.com/NickTheDev/cutedoc
+$ go get github.com/NickTheDev/cutedoc/cmd/cutedoc
 ```
 If you do not have or wish to install Go, you can grab a pre-built binary from
 [Github](https://github.com/NickTheDev/cutedoc/releases). However, with this method you will have

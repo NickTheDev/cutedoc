@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("mobile-nav").classList.toggle("nav-open")
   });
 
-  document.querySelectorAll(".dropdown-collapse li a").forEach(function(value) {
+  document.querySelectorAll(".nav-collapse li a").forEach(function(value) {
     value.addEventListener("click", function() {
       document.getElementById("mobile-nav").classList.remove("nav-open");
     });
